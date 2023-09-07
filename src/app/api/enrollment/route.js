@@ -148,7 +148,7 @@ export const DELETE = async (request) => {
 
   //check if studentId and courseNo exist on enrollment
   const found = DB.enrollments.findIndex(
-    (std) => std.courseNo === body.courseNo && std.studentId === body.studentId
+    (std) => std.courseNo === courseNo && std.studentId === studentId
   );
   if (found === -1) {
     return NextResponse.json(
